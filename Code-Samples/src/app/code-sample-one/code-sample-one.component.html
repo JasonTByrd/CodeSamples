@@ -5,12 +5,13 @@
     <!-- Input -->
     <mat-form-field appearance="outline">
         <mat-label>Enter Text Here</mat-label>
-        <input [(ngModel)]="csOneInputText" matInput placeholder="Try something fun!" (ngModelChange)="onChanges()">
+        <input [(ngModel)]="csOneInputText" matInput placeholder="Try something fun!">
     </mat-form-field>
 
-    <!-- Run -->
+    <!-- Run Button Component -->
     <app-cs-button-general (click)="csOneRun()" text="Run"></app-cs-button-general>
 
+    <!-- Output -->
     <div class="cs-one-output-cont">
         <h2 class="cs-one-output" [ngClass]="{ 'running': running }">{{csOneOutputText}}</h2>
     </div>
