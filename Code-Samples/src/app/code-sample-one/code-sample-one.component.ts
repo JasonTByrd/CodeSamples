@@ -10,10 +10,6 @@ export class CodeSampleOneComponent {
   csOneOutputText:string = "";
   running:boolean = false;
 
-  onChanges() {
-    //console.log(this.csOneInputText);
-  }
-
   csOneRun() {
     console.log(this.csOneInputText);
     this.csOneOutputText = this.csOneInputText;
