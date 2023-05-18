@@ -46,12 +46,8 @@ describe('CodeSampleOneComponent', () => {
 
   it('Render csOneOutputText when clicked', fakeAsync(() => {
     spyOn(component, 'csOneRun');
-
-    let button = fixture.debugElement.nativeElement.querySelector('button');
-    button.click();
-  
+    fixture.debugElement.nativeElement.querySelector('button').click();
     tick();
-  
     expect(component.csOneRun).toHaveBeenCalled();
   }));
 });
