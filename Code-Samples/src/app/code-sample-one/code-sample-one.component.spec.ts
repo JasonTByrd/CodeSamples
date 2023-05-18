@@ -44,7 +44,7 @@ describe('CodeSampleOneComponent', () => {
     expect(compiled.querySelector('.cs-one h2')?.textContent).toContain('UI Code Sample');
   });
 
-  it('Render csOneOutputText when clicked', fakeAsync(() => {
+  it('Test button click and function run', fakeAsync(() => {
     spyOn(component, 'csOneRun');
     fixture.debugElement.nativeElement.querySelector('button').click();
     tick();

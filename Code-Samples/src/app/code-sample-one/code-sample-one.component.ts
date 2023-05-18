@@ -6,10 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./code-sample-one.component.scss']
 })
 export class CodeSampleOneComponent {
+  //Component variable declarations
   csOneInputText:string = "";
   csOneOutputText:string = "";
   running:boolean = false;
 
+  //Run text animation and assing styles/variables accordingly
   csOneRun() {
     console.log(this.csOneInputText);
     this.csOneOutputText = this.csOneInputText;
