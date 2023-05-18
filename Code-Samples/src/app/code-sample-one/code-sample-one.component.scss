@@ -5,3 +5,38 @@
     flex-direction: column;
     align-items: center;
 }
+
+.cs-one-output-cont {
+    width: 250px;
+    position: relative;
+    height: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 2;
+    mask-image: linear-gradient(to right, transparent, black, black, black, black, black, transparent);
+
+    .cs-one-output {
+        position: absolute;
+        margin: 0px;
+        transform: translatex(100%);
+        z-index: 1;
+        white-space: nowrap;
+        text-align: center;
+        min-width: 250px;
+    }
+
+    .running {
+        animation-name: runAnim;
+        animation-duration: 7s;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes runAnim {
+    0%   {transform: translatex(100%);}
+    100% {transform: translatex(-100%);}
+}

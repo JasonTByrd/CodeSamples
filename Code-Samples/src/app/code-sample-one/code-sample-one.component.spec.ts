@@ -23,6 +23,6 @@ describe('CodeSampleOneComponent', () => {
     const fixture = TestBed.createComponent(CodeSampleOneComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.api-ui-cont')?.textContent).toContain('UI Code Sample One');
+    expect(compiled.querySelector('.api-ui-cont')?.textContent).toContain('UI Code Sample');
   });
 });

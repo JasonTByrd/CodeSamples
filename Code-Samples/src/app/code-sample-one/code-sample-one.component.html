@@ -1,15 +1,17 @@
 <div class="cs-one">
     <!-- Header -->
-    <h2>UI Code Sample One</h2>
+    <h2>UI Code Sample</h2>
 
     <!-- Input -->
     <mat-form-field appearance="outline">
         <mat-label>Enter Text Here</mat-label>
-        <input [(ngModel)]="csOneInputText" matInput placeholder="Try something fun!">
+        <input [(ngModel)]="csOneInputText" matInput placeholder="Try something fun!" (ngModelChange)="onChanges()">
     </mat-form-field>
 
     <!-- Run -->
-    <app-cs-button-general text="Run"></app-cs-button-general>
+    <app-cs-button-general (click)="csOneRun()" text="Run"></app-cs-button-general>
 
-    <h2>{{csOneInputText}}</h2>
+    <div class="cs-one-output-cont">
+        <h2 class="cs-one-output" [ngClass]="{ 'running': running }">{{csOneOutputText}}</h2>
+    </div>
 </div>

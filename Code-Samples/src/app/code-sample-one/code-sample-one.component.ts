@@ -1,16 +1,25 @@
-import { Component, Input, OnChanges, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-code-sample-one',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './code-sample-one.component.html',
   styleUrls: ['./code-sample-one.component.scss']
 })
-export class CodeSampleOneComponent implements OnChanges {
-  @Input() 
+export class CodeSampleOneComponent {
   csOneInputText:string = "";
+  csOneOutputText:string = "";
+  running:boolean = false;
 
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
+  onChanges() {
+    //console.log(this.csOneInputText);
+  }
+
+  csOneRun() {
+    console.log(this.csOneInputText);
+    this.csOneOutputText = this.csOneInputText;
+    this.running = false;
+    setTimeout(() => {
+      this.running = true;
+    }, 100)
   }
 }
