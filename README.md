@@ -7,7 +7,7 @@ Node-PHP: A node and php file to be run via command line via the following comma
 
 php readWrite.php <debug> <read> <write> <"text to write">
 
-node readWrite.php <debug> <read> <write> <"text to write">
+node readWrite.js <debug> <read> <write> <"text to write">
 
 
 debug: prints the arguments used when calling the file
