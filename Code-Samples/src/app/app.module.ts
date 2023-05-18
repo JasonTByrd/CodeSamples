@@ -3,13 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ApiUiComponent } from './api-ui/api-ui.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CodeSampleOneComponent } from './code-sample-one/code-sample-one.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ApiUiComponent
+    CodeSampleOneComponent
   ],
   imports: [
     BrowserModule,
