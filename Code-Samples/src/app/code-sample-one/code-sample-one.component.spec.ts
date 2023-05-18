@@ -1,6 +1,13 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
-import { CodeSampleOneComponent } from './code-sample-one.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CodeSampleOneComponent } from '../code-sample-one/code-sample-one.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'; 
+import { CsButtonGeneralComponent } from '../cs-button-general/cs-button-general.component';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('CodeSampleOneComponent', () => {
   let component: CodeSampleOneComponent;
@@ -8,7 +15,18 @@ describe('CodeSampleOneComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CodeSampleOneComponent]
+      declarations: [
+        CodeSampleOneComponent,
+        CsButtonGeneralComponent,
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        FormsModule,
+        MatInputModule,
+        MatIconModule
+      ]
     });
     fixture = TestBed.createComponent(CodeSampleOneComponent);
     component = fixture.componentInstance;
@@ -19,10 +37,21 @@ describe('CodeSampleOneComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render text', () => {
+  it('should render heading text', () => {
     const fixture = TestBed.createComponent(CodeSampleOneComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.api-ui-cont')?.textContent).toContain('UI Code Sample');
+    expect(compiled.querySelector('.cs-one h2')?.textContent).toContain('UI Code Sample');
   });
+
+  it('Render csOneOutputText when clicked', fakeAsync(() => {
+    spyOn(component, 'csOneRun');
+
+    let button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+  
+    tick();
+  
+    expect(component.csOneRun).toHaveBeenCalled();
+  }));
 });

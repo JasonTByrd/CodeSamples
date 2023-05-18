@@ -18,4 +18,12 @@ describe('CsButtonGeneralComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render button text', () => {
+    const fixture = TestBed.createComponent(CsButtonGeneralComponent);
+    fixture.componentInstance.text = "Run";
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('button')?.textContent).toContain(fixture.componentInstance.text);
+  });
 });
